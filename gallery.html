@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dining - Destinations</title>
+<!-- Stylesheets -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="css/haeder.css">
+<link rel="stylesheet" href="css/faqs.css">
+<link rel="shortcut icon" href="images/logonav.png" type="image/x-icon">
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+<link rel="stylesheet" href="css/modal.css">
+</head>
+<body>
+
+<!-- Nav Menu Start -->
+<header>
+    <nav class="desktop-display" id="nav">
+        <!-- NAV BAR LOGO AREA -->
+        <div class="left-nav">
+            <img src="images/logonav.png" alt="Logo">
+        </div>
+
+        <!-- NAV BAR NAVIGATION ARE -->
+        <div class="navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="reserved.html">Order Now</a></li>
+                <li><a href="menuall.html">Menu</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="aboutus.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </div>
+
+        <!-- FURTHER NAVIGATIONS -->
+        <div class="right-nav">
+            <div class="container">
+                <a href="#"><i class="uil uil-search"></i>Search</a>
+                <a href="#"><i class="uil uil-heart"></i> Wishlist</a>
+                <a href="#" onclick="showProfile()"><i class="uil uil-user"></i> Profile</a>
+                <a class="Cart" onclick="showcart()"><i class="uil uil-briefcase"></i> My Cart <div id="num">0</div>
+                    </a>
+            </div>
+            <div class="cart-container">
+                <div class="cart-container-content">
+                    <p>Your cart is empty</p>
+                </div>
+            </div>
+            <div class="profile-container">
+                <div class="profile-container-content">
+                    <p><a href="#"><i class="uil uil-lock"></i> Login</a></p>
+                    <p><a href="#"><i class="uil uil-user"></i> Create Account</a></p>
+                    <select name="" id="">
+                        <option value="0">United States ($)</option>
+                        <option value="1">Pakistan (PKR)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <nav class="mobile-responsive" id="mblNav">
+        <div class="logo-container">
+            <a href="index.html"> <img src="IMG/Logo.webp" alt=""></a>
+        </div>
+        <div class="navbar">
+            <ul>
+                <li><i class="uil uil-search"></i></li>
+                <li><i class="uil uil-heart"></i></li>
+                <li><i class="uil uil-user"></i></li>
+                <a onclick="showcart()">
+                    <li><i class="uil uil-shopping-bag"> <span>0</span></i></li>
+                </a>
+            </ul>
+        </div>
+    </nav>
+</header>
+<!-- Nav Menu END -->
+
+<script src="js/gallery.js"></script>
+   <!-- ======== MAIN SECTION END ================= -->
+   <div class="products-preview">
+
+
+   </div>
+   <div class="page-wrapper">
+
+       <!--Special Offer Section-->
+       <section class="special-offer-two">
+           <div class="left-bg"><img src="images/background/bg-20.png" alt="" title=""></div>
+           <div class="right-bg"><img src="images/background/bg-19.png" alt="" title=""></div>
+           <div class="auto-container">
+               <div class="title-box centered">
+                   <h2>Gallery Of Our Restuarant is Here</h2>
+               </div>
+               <div class="row clearfix">
+                   <script>
+                       let cardContainer = document.querySelector(".products-preview")
+
+                       for (var i = 0; i <= mymenu.length; i++) {
+                           document.write("<div class='offer-block-three col-xl-3 col-lg-4 col-md-6 col-sm-12' onclick='handleClick(" + i + ")'>");
+                           document.write("<div class='inner-box wow fadeInUp' data-wow-duration='1500ms' data-wow-delay='0ms'>");
+                           document.write("<div class='image'>");
+                           document.write("<img src=" + mymenu[i].image + ">");
+                           document.write("</div>");
+                           document.write("</div>");
+                           document.write("</div>");
+                       }
+                       function handleClick(id) {
+                           let getNew = mymenu.slice(id, id + 1);
+                           console.log(getNew)
+                           cardContainer.style.display = 'flex';
+                           cardContainer.innerHTML = `
+                           <div class="preview active" data-target="p-1">
+                              <i class="fas fa-times" onclick='handleClose()'></i>
+                                           <img src=${getNew[0].image} alt="">
+                                     </div>             
+                                `
+                       }
+                       function handleClose() {
+                           let previewBox = document.querySelector(".preview")
+
+                           cardContainer.style.display = 'none';
+                           previewBox.classList.remove("active");
+
+                       }
+                       function addtocart() {
+                           sweetAlert("Added to cart Successfully.")
+
+                       }
+
+                   </script>
+
+               </div>
+           </div>
+       </section>
+
+   </div>
+   <!--End pagewrapper-->
+
+
+
+  <!-- Footer -->
+  <footer>
+    <hr>
+    <footer class="container">
+        <div class="footer-1">
+            <a href="index.html">
+                <h3>Dining Destinations</h3>
+            </a> 
+            <p>Great food and great company.
+                Nothing brings people together like good food.</p>
+            <a href="#" class="social">Social Media</a>
+            <a href=""><i class="uil uil-facebook-f"></i></a>
+            <a href=""><i class="uil uil-linkedin"></a></i>
+            <a href=""><i class="uil uil-instagram"></a></i>
+        </div>
+        <div class="footer-2">
+            <h3>Services</h3>
+            <ul>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faqs.html">FAQ</a></li>
+            </ul>
+        </div>
+        <div class="footer-3">
+            <h3>Extras</h3>
+            <ul>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="reserved.html">Order Now</a></li> 
+               <li><a href="menuall.html">Menu</a></li>
+            </ul>
+        </div>
+        <div class="footer-4">
+            <h3>Contact Us</h3>
+            <ul>
+                <li><i class="uil uil-location-point"></i> Dinning Destinations </li>
+                <li><i class="uil uil-phone"></i> +92 3402898765</li>
+                <li><i class="uil uil-envelope"></i> info@email.com</li>
+            </ul>
+        </div>
+    </footer>
+    <hr>
+    <div class="copy-right">
+        <p> &copy; 2023, Develop by <a href="#">Asma Obaidullah</a> & <a href="#">Abbad</a>
+        </p>
+    </div>
+</footer>
+<!-- Footer -->
+
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="icon fa fa-angle-up"></span></div>
+
+<script src="js/jquery.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/jquery.fancybox.js"></script>
+<script src="js/swiper.js"></script>
+<script src="js/owl.js"></script>
+<script src="js/appear.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/custom-script.js"></script>
+<script src="js/script.js"></script>
+<script src="js/header.js"></script>
+
+</body>
+</html>

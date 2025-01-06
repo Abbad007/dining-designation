@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+</head>
+<body>
+    <h2>Signup</h2>
+    <form id="signupForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" required><br><br>
+
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <p id="message"></p>
+
+    <script>
+        // Function to handle the signup form submission
+        document.getElementById("signupForm").addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent the form from submitting normally
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Check if the username already exists in local storage
+            if (localStorage.getItem(username) === null) {
+                // Store the user's data in local storage
+                localStorage.setItem(username, password);
+                document.getElementById("message").textContent = "Signup successful. You can now log in.";
+            } else {
+                document.getElementById("message").textContent = "Username already exists. Please choose a different one.";
+            }
+
+            // Clear the form fields
+            document.getElementById("username").value = "";
+            document.getElementById("password").value = "";
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <h1>Product List</h1>
+    <ul id="product-list">
+        <li data-id="1">Product 1 - $10 <button class="add-to-cart">Add to Cart</button></li>
+        <li data-id="2">Product 2 - $20 <button class="add-to-cart">Add to Cart</button></li>
+        <li data-id="3">Product 3 - $30 <button class="add-to-cart">Add to Cart</button></li>
+    </ul>
+
+    <h1>Shopping Cart</h1>
+    <ul id="cart-list"></ul>
+
+    <script>
+        // Function to add a product to the cart
+        function addToCart(product) {
+            // Check if the cart already exists in localStorage
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Add the product to the cart
+            cart.push(product);
+
+            // Update the cart in localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Update the cart display
+            updateCartDisplay();
+        }
+
+        // Function to update the cart display
+        function updateCartDisplay() {
+            const cartList = document.getElementById('cart-list');
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Clear the cart list
+            cartList.innerHTML = '';
+
+            // Populate the cart list with items
+            cart.forEach((product, index) => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `Product ${product.id} - $${product.price}`;
+                cartList.appendChild(listItem);
+            });
+        }
+
+        // Add event listeners to "Add to Cart" buttons
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const product = {
+                    id: button.parentElement.getAttribute('data-id'),
+                    price: parseInt(button.parentElement.textContent.match(/\d+/)[0])
+                };
+                addToCart(product);
+            });
+        });
+
+        // Initialize cart display
+        updateCartDisplay();
+    </script>
+</body>
+</html>

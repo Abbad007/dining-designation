@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dining - Destinations</title>
+<!-- Stylesheets -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/haeder.css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="shortcut icon" href="images/logonav.png" type="image/x-icon">
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+</head>
+
+<body>
+<!-- Nav Menu Start -->
+<header>
+    <nav class="desktop-display" id="nav">
+        <!-- NAV BAR LOGO AREA -->
+        <div class="left-nav">
+            <img src="images/logonav.png"  alt="Logo">
+           <!-- <a href="index.html"><h5>Delicious Resturant</h5></a>  -->
+        </div>
+
+        <!-- NAV BAR NAVIGATION ARE -->
+        <div class="navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="reserved.html">Order Now</a></li>
+                <li><a href="menuall.html">Menu</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="aboutus.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </div>
+
+        <!-- FURTHER NAVIGATIONS -->
+        <div class="right-nav">
+            <div class="container">
+                <a href="#"><i class="uil uil-search"></i>Search</a>
+                <a href="#"><i class="uil uil-heart"></i> Wishlist</a>
+                <a href="#" onclick="showProfile()"><i class="uil uil-user"></i> Profile</a>
+                <a class="Cart" onclick="showcart()"><i class="uil uil-briefcase"></i> My Cart <div id="num">0</div>
+                    </a>
+            </div>
+            <div class="cart-container">
+                <div class="cart-container-content">
+                    <p>Your cart is empty</p>
+                </div>
+            </div>
+            <div class="profile-container">
+                <div class="profile-container-content">
+                    <p><a href="#"><i class="uil uil-lock"></i> Login</a></p>
+                    <p><a href="#"><i class="uil uil-user"></i> Create Account</a></p>
+                    <select name="" id="">
+                        <option value="0">United States ($)</option>
+                        <option value="1">Pakistan (PKR)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <nav class="mobile-responsive" id="mblNav">
+        <div class="logo-container">
+            <a href="/"> <img src="IMG/Logo.webp" alt=""></a>
+        </div>
+        <div class="navbar">
+            <ul>
+                <li><i class="uil uil-search"></i></li>
+                <li><i class="uil uil-heart"></i></li>
+                <li><i class="uil uil-user"></i></li>
+                <a onclick="showcart()">
+                    <li><i class="uil uil-shopping-bag"> <span>0</span></i></li>
+                </a>
+            </ul>
+        </div>
+    </nav>
+</header>
+<!-- Nav Menu END -->
+
+  <div class="page-wrapper"> 
+
+    <!--Online Reservation Section-->
+    <section class="online-reservation">
+        <div class="image-layer" style="background-image: url(images/resource/reser.jpg);"></div>
+        <div class="auto-container">
+            <div class="title-box centered">
+                <div class="subtitle"><span>special offer</span></div>
+                <div class="pattern-image"><img src="images/icons/separator.svg" alt="" title=""></div>
+                <h2>Online Reservation</h2>
+                <div class="text request-info">Booking request <a href="#">+92 45688996</a> or fill out the order form</div>
+            </div>
+            <div class="default-form reservation-form">
+                <form action="booked.html">
+                    <div class="row clearfix">
+                        <div class="form-group col-lg-4 col-md-6 col-sm-12">
+                            <div class="field-inner">
+                                <span class="alt-icon far fa-user"></span>
+                                <select class="l-icon">
+                                    <option>1 Person</option>
+                                    <option>2 Person</option>
+                                    <option>3 Person</option>
+                                    <option>4 Person</option>
+                                    <option>5 Person</option>
+                                    <option>6 Person</option>
+                                    <option>7 Person</option>
+                                </select>
+                                <span class="arrow-icon far fa-angle-down"></span>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-4 col-md-12 col-sm-12">
+                            <div class="field-inner">
+                                <span class="alt-icon far fa-"></span>
+                                <input type="date">
+                                <span class="arrow-icon far fa-angle-down"></span>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-4 col-md-12 col-sm-12">
+                            <div class="field-inner">
+                                <span class="alt-icon far fa-clock"></span>
+                                <select class="l-icon">
+                                    <option>08 : 00 am</option>
+                                    <option>09 : 00 am</option>
+                                    <option>10 : 00 am</option>
+                                    <option>11 : 00 am</option>
+                                    <option>12 : 00 pm</option>
+                                    <option>01 : 00 pm</option>
+                                    <option>02 : 00 pm</option>
+                                    <option>03 : 00 pm</option>
+                                    <option>04 : 00 pm</option>
+                                    <option>05 : 00 pm</option>
+                                    <option>06 : 00 pm</option>
+                                    <option>07 : 00 pm</option>
+                                    <option>08 : 00 pm</option>
+                                    <option>09 : 00 pm</option>
+                                    <option>10 : 00 pm</option>
+                                </select>
+                                <span class="arrow-icon far fa-angle-down"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="theme-btn btn-style-one clearfix">
+                        <span class="btn-wrap">
+                            <span class="text-one">book a table</span>
+                            <span class="text-two">book a table</span>
+                        </span>
+                    </button>
+                </form>
+                <div class="powered-by">*Powered by OpenTable</div>
+            </div>
+        </div>
+    </section>
+
+    <!--Reservation Section-->
+    <section class="reserve-section style-two">
+        <div class="image-layer" style="background-image: url(images/background/image-7.jpg);"></div>
+        <div class="auto-container">
+            <div class="outer-box">
+                <div class="row clearfix">
+                    <div class="reserv-col col-lg-8 col-md-12 col-sm-12">
+                        <div class="inner">
+                            <div class="title">
+                                <h2>Online Reservation</h2>
+                                <div class="request-info">Booking request <a href="#">+92 345797548</a> or fill out the order form</div>
+                            </div>
+                            <div class="default-form reservation-form">
+                                <form action="booked.html">
+                                    <div class="row clearfix">
+                                        <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                                            <div class="field-inner">
+                                                <input type="text" name="fieldname" value="" placeholder="Your Name" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                                            <div class="field-inner">
+                                                <input type="text" name="fieldname" value="" placeholder="Phone Number" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-lg-4 col-md-6 col-sm-12">
+                                            <div class="field-inner">
+                                                <span class="alt-icon far fa-user"></span>
+                                                <select class="l-icon">
+                                                    <option>1 Person</option>
+                                                    <option>2 Person</option>
+                                                    <option>3 Person</option>
+                                                    <option>4 Person</option>
+                                                    <option>5 Person</option>
+                                                    <option>6 Person</option>
+                                                    <option>7 Person</option>
+                                                </select>
+                                                <span class="arrow-icon far fa-angle-down"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-lg-4 col-md-6 col-sm-12">
+                                            <div class="field-inner">
+                                                <span class="alt-icon far fa-"></span>
+                                                <input type="date">
+                                                <span class="arrow-icon far fa-angle-down"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-lg-4 col-md-12 col-sm-12">
+                                            <div class="field-inner">
+                                                <span class="alt-icon far fa-clock"></span>
+                                                <select class="l-icon">
+                                                    <option>08 : 00 am</option>
+                                                    <option>09 : 00 am</option>
+                                                    <option>10 : 00 am</option>
+                                                    <option>11 : 00 am</option>
+                                                    <option>12 : 00 pm</option>
+                                                    <option>01 : 00 pm</option>
+                                                    <option>02 : 00 pm</option>
+                                                    <option>03 : 00 pm</option>
+                                                    <option>04 : 00 pm</option>
+                                                    <option>05 : 00 pm</option>
+                                                    <option>06 : 00 pm</option>
+                                                    <option>07 : 00 pm</option>
+                                                    <option>08 : 00 pm</option>
+                                                    <option>09 : 00 pm</option>
+                                                    <option>10 : 00 pm</option>
+                                                </select>
+                                                <span class="arrow-icon far fa-angle-down"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                            <div class="field-inner">
+                                                <textarea name="fieldname" placeholder="Message" required></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                            <div class="field-inner">
+                                                <button type="submit" class="theme-btn btn-style-one clearfix">
+                                                    <span class="btn-wrap">
+                                                        <span class="text-one">book a table</span>
+                                                        <span class="text-two">book a table</span>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-col col-lg-4 col-md-12 col-sm-12">
+                        <div class="inner">
+                            <div class="img-layer" style="background-image: url(images/background/bg-17.png);"></div>
+                            <div class="title">
+                                <div class="subtitle">hot deal</div>
+                                <h5>Lunch & Dinner Specials</h5>
+                            </div>
+                            <div class="data">
+                                <div class="discount-info">
+                                    <div class="s-ttl">up to</div>
+                                    <div class="num">45%</div>
+                                    <div class="s-ttl">discount</div>
+                                </div>
+                                <div class="instruction">
+                                    • Not valid for online order <br>
+                                    • Non-refundable <br>
+                                    • Offer end on 25 Jan <br>
+                                </div>
+                                <div class="link-box">
+                                    <a href="#" class="theme-btn btn-style-one clearfix">
+                                        <span class="btn-wrap">
+                                            <span class="text-one">book now</span>
+                                            <span class="text-two">book now</span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>
+<!--End pagewrapper--> 
+
+
+  <!-- Footer -->
+  <footer>
+    <hr>
+    <footer class="container">
+        <div class="footer-1">
+            <!-- <img src="images/logo.png" alt="Logo"> -->
+            <a href="index.html">
+                <h3>Dining Destinations</h3>
+            </a>
+            <p>Great food and great company.
+                Nothing brings people together like good food.</p>
+            <a href="#" class="social">Social Media</a>
+            <a href=""><i class="uil uil-facebook-f"></i></a>
+            <a href=""><i class="uil uil-linkedin"></a></i>
+            <a href=""><i class="uil uil-instagram"></a></i>
+        </div>
+        <div class="footer-2">
+            <h3>Services</h3>
+            <ul>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faqs.html">FAQ</a></li>
+            </ul>
+        </div>
+        <div class="footer-3">
+            <h3>Extras</h3>
+            <ul>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="reserved.html">Order Now</a></li> 
+               <li><a href="menuall.html">Menu</a></li>
+            </ul>
+        </div>
+        <div class="footer-4">
+            <h3>Contact Us</h3>
+            <ul>
+                <li><i class="uil uil-location-point"></i> Dinning Destinations </li>
+                <li><i class="uil uil-phone"></i> +92 3402898765</li>
+                <li><i class="uil uil-envelope"></i> info@email.com</li>
+            </ul>
+        </div>
+    </footer>
+    <hr>
+    <div class="copy-right">
+        <p> &copy; 2023, Develop by <a href="#">Asma Obaidullah</a> & <a href="#">Abbad</a>
+        </p>
+    </div>
+</footer>
+<!-- Footer -->
+
+
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="icon fa fa-angle-up"></span></div>
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="icon fa fa-angle-up"></span></div>
+<script src="JS/jquery.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="JS/swiperjsall.js"></script>
+<script src="JS/script.js"></script>
+<script src="JS/header.js"></script>
+</body>
+</html>
